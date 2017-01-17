@@ -10,6 +10,7 @@ BUILDDIR      = build
 GIT_PUB_LOCAL_DIR = docs_repo
 
 publish:
+	ssh-add -l
 	git clone $(GIT_PUB_REPO) $(GIT_PUB_LOCAL_DIR) && cp -r $(BUILDDIR)/html docs_repo/$(GIT_PUB_DIR) && cd $(GIT_PUB_LOCAL_DIR) && git add . && git commit -m "Updating docs." && git push $(GIT_PUB_REPO) $(GIT_PUB_BRANCH)
 
 
