@@ -15,6 +15,7 @@ ssh-add deploy_key
 # Push build to repository
 BUILDDIR="build"
 GIT_PUB_LOCAL_DIR="docs_repo"
+echo $ENCRYPTION_LABEL
 ssh-add -l
 git config --global user.email "Travis Docs CI"
 git config --global user.name "Travis Docs CI"
