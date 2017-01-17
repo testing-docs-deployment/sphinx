@@ -16,11 +16,11 @@ ssh-add deploy_key
 BUILDDIR="build"
 GIT_PUB_LOCAL_DIR="docs_repo"
 ssh-add -l
+git config --global user.email "Travis Docs CI"
+git config --global user.name "Travis Docs CI"
 git clone $GIT_PUB_REPO $GIT_PUB_LOCAL_DIR
 cp -r ${BUILDDIR}/html docs_repo/${GIT_PUB_DIR}
 cd $GIT_PUB_LOCAL_DIR
-git config user.name "Travis Docs CI"
-git config user.email "$COMMIT_AUTHOR_EMAIL"
 git add .
 git commit -m "Updating docs."
 git push $GIT_PUB_REPO $GIT_PUB_BRANCH
