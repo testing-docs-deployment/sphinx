@@ -1,10 +1,8 @@
 language: python
 
-before_install: bash script/add-deploy.sh
-
 install: "pip install Sphinx"
 
-script: make html && make publish
+script: make html && bash script/publish.sh
 
 notifications:
   email: false
