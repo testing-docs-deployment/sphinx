@@ -2,4 +2,7 @@ language: python
 
 install: "pip install Sphinx"
 
-script: make html
+script: make html && make publish
+
+notifications:
+  email: false

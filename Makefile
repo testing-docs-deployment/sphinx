@@ -7,6 +7,11 @@ SPHINXBUILD   = sphinx-build
 SPHINXPROJ    = SphinxDocs
 SOURCEDIR     = source
 BUILDDIR      = build
+GIT_PUB_LOCAL_DIR = docs_repo
+
+publish:
+	git clone $(GIT_PUB_REPO) $(GIT_PUB_LOCAL_DIR) && cp -r $(BUILDDIR)/html docs_repo/$(GIT_PUB_DIR) && cd $(GIT_PUB_LOCAL_DIR) && git add . && git commit -m "Updating docs." && git push $(GIT_PUB_REPO) $(GIT_PUB_BRANCH)
+
 
 # Put it first so that "make" without argument is like "make help".
 help:
